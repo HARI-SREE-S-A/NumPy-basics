@@ -1,0 +1,14 @@
+import numpy as np
+import matplotlib.pyplot as plt
+n_points = 100
+np.random.seed(0)
+random_x1 = np.random.normal(10,2,n_points)
+random_x2 = np.random.normal(12,2,n_points)
+rn_x1 = np.random.normal(5,2,n_points)
+rn_x2 = np.random.normal(7,2,n_points)
+topregion = np.array([random_x1,random_x2]).T
+bottomregion = np.array([rn_x1,rn_x2]).T
+_,ax = plt.subplots(figsize = (4,4))
+ax.scatter(topregion[:,0],topregion[:,1],color = 'r')
+ax.scatter(bottomregion[:,0],bottomregion[:,1],color = 'b')
+plt.show()
