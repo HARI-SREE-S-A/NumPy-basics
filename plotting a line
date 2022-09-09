@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def draw(x1,x2):
+    ln = plt.plot(x1,x2)
+
+np.random.seed(0)
+points = 10
+bias  = np.ones(points)
+top = np.array([np.random.normal(10,2,points),np.random.normal(12,2,points),bias]).T
+bottom = np.array([np.random.normal(5,2,points),np.random.normal(7,2,points),bias]).T
+all_region = np.vstack((top,bottom))
+w1 = -0.2
+w2 = -0.35
+b = 3.5
+line_parameters = np.matrix([w1,w2,b]).T
+x1 = np.array([bottom[:,0].min(),top[:,0].max()])
+x2 = -b/w2 +x1*(-w1/w2)
+print(x1,x2)
+fig,ax = plt.subplots(figsize=(4,4))
+ax.scatter(top[:,0],top[:,1],color = 'r')
+ax.scatter(bottom[:,0],bottom[:,1],color = 'g')
+draw(x1,x2)
+
+plt.show()
