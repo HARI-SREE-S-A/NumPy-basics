@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 
 def draw(x1,x2):
     ln = plt.plot(x1,x2)
+    
+    
 
 np.random.seed(0)
 points = 10
